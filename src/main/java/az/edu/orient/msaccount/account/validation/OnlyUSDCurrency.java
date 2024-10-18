@@ -15,4 +15,4 @@ public @interface OnlyUSDCurrency {
     String message() default "Invalid currency";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
-}
+ }

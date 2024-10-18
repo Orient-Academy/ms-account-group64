@@ -3,11 +3,9 @@ package az.edu.orient.msaccount.account.mapper;
 import az.edu.orient.msaccount.account.entity.AccountEntity;
 import az.edu.orient.msaccount.account.model.AccountCreateRequest;
 import az.edu.orient.msaccount.account.model.AccountResponse;
-import az.edu.orient.msaccount.account.model.Status;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
-import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring")
 public interface AccountMapper {

@@ -10,4 +10,5 @@ public class AccountResponse {
     private Currency currency;
     private BigDecimal balance;
     private String iban;
+    private Status status;
 }

@@ -22,12 +22,6 @@ public class AccountController {
     private final AccountService accountService;
     private final AccountCreateValidation accountCreateValidation;
 
-   /* @InitBinder
-    public void initBinder(WebDataBinder binder){
-        if (accountCreateValidation.supports(binder.getTarget().getClass())){
-            binder.addValidators(accountCreateValidation);
-        }
-    }*/
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
@@ -49,7 +43,7 @@ public class AccountController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public AccountResponse updateAccount(@PathVariable @Positive(message = "id is null") Long id, @RequestBody AccountCreateRequest accountCreateRequest){
+    public AccountResponse updateAccount(@PathVariable Long id, @RequestBody AccountCreateRequest accountCreateRequest){
         return accountService.updateAccount(id,accountCreateRequest);
     }
 
