@@ -14,7 +14,7 @@ public interface AccountMapper {
     @Mapping(target = "status",ignore = true)
     AccountEntity toEntity(AccountCreateRequest request);
 
-    AccountResponse toResponse(AccountEntity entity);
+ AccountResponse toResponse(AccountEntity entity);
 
     //List<AccountResponse> toResponse(List<AccountEntity> entity
 

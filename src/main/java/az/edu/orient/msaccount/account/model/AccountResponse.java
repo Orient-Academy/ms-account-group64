@@ -11,4 +11,5 @@ public class AccountResponse {
     private BigDecimal balance;
     private String iban;
     private Status status;
+    private Long userId;;
 }

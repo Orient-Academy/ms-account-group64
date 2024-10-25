@@ -15,4 +15,6 @@ public class AccountCreateRequest {
     private Currency currency;
     @PositiveOrZero(message = "Balance could be negative number")
     private BigDecimal balance;
+    private Long userId;;
+
 }
