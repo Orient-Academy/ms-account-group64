@@ -34,6 +34,42 @@ class AccountServiceTest {
 
     @Test
     void addAccount() {
+        AccountCreateRequest request = new AccountCreateRequest();
+        request.setName("Nemet");
+        request.setCurrency(Currency.USD);
+        request.setBalance(BigDecimal.valueOf(500));
+
+        AccountEntity accountEntity = new AccountEntity();
+        accountEntity.setName(request.getName());
+        accountEntity.setCurrency(request.getCurrency());
+        accountEntity.setBalance(request.getBalance());
+
+        when(mapper.toEntity(request)).thenReturn(accountEntity);
+        when(accountRepository.save(any(AccountEntity.class))).thenAnswer(invocation -> {
+            AccountEntity savedEntity = invocation.getArgument(0);
+            savedEntity.setId(1L);
+            return savedEntity;
+        });
+
+        AccountResponse expectedResponse = new AccountResponse();
+        expectedResponse.setId(1L);
+        expectedResponse.setName(request.getName());
+        expectedResponse.setIban(anyString());
+        expectedResponse.setStatus(Status.ACTIVE);
+
+        when(mapper.toResponse(any(AccountEntity.class))).thenReturn(expectedResponse);
+
+        AccountResponse response = accountService.addAccount(request);
+
+        assertNotNull(response);
+        assertEquals(1L, response.getId());
+        assertEquals(request.getName(), response.getName());
+        assertEquals(Status.ACTIVE, response.getStatus());
+
+        verify(mapper).toEntity(request);
+        verify(accountRepository).save(accountEntity);
+        verify(mapper).toResponse(any(AccountEntity.class));
+
     }
 
     @Test
