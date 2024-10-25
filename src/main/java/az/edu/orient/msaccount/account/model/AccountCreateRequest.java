@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 public class AccountCreateRequest {
     @NotBlank(message = "Name is required")
     private String name;
-    @OnlyUSDCurrency(message = "We open only USD bank account")
+    //@OnlyUSDCurrency(message = "We open only USD bank account")
     private Currency currency;
     @PositiveOrZero(message = "Balance could be negative number")
     private BigDecimal balance;
