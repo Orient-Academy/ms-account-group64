@@ -54,7 +54,7 @@ class AccountServiceTest {
         AccountResponse expectedResponse = new AccountResponse();
         expectedResponse.setId(1L);
         expectedResponse.setName(request.getName());
-        expectedResponse.setIban(anyString());
+        expectedResponse.setIban(UUID.randomUUID().toString());
         expectedResponse.setStatus(Status.ACTIVE);
 
         when(mapper.toResponse(any(AccountEntity.class))).thenReturn(expectedResponse);

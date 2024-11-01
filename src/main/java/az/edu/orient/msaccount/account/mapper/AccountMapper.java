@@ -6,12 +6,10 @@ import az.edu.orient.msaccount.account.model.AccountResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
-import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface AccountMapper {
-
-    AccountMapper INSTANCE = Mappers.getMapper(AccountMapper.class);
+   // AccountMapper INSTANCE = Mappers.getMapper(AccountMapper.class);
     @Mapping(target = "iban",ignore = true)
     @Mapping(target = "status",ignore = true)
     AccountEntity toEntity(AccountCreateRequest request);
