@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.3.5'
     id 'io.spring.dependency-management' version '1.1.6'
+    id "io.freefair.lombok" version "8.4"
 }
 
 group = 'az.edu.orient'
@@ -33,8 +34,6 @@ dependencies {
     implementation "org.mapstruct:mapstruct:1.6.0"
     implementation 'mysql:mysql-connector-java:8.0.33'
     annotationProcessor "org.mapstruct:mapstruct-processor:1.6.0"
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     testImplementation 'org.junit.jupiter:junit-jupiter'
