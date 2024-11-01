@@ -17,7 +17,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class AccountService {
     private final AccountRepository accountRepository;
-    private final AccountMapper mapper;
+    private AccountMapper mapper = AccountMapper.INSTANCE;
 
     public AccountResponse addAccount(AccountCreateRequest request) {
         AccountEntity entity = mapper.toEntity(request);
