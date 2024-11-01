@@ -1,0 +1,14 @@
+name: First Github Action JOB
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Say-Hello-Job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello Github ${{ github.actor }}"
+
+
+
