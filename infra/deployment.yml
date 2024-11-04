@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-account
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ms-account
+  template:
+    metadata:
+      labels:
+        app: ms-account
+    spec:
+      containers:
+        - name: ms-account
+          image: 057196872298.dkr.ecr.us-west-2.amazonaws.com/ms-account
+          ports:
+            - containerPort: 8080
