@@ -68,6 +68,6 @@ jobs:
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
 
       - name: Update kube config
-        run: aws eks update-kubeconfig --name group64
+        run: aws eks --region us-east-1  update-kubeconfig --name group64
 
 
