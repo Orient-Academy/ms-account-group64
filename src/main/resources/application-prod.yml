@@ -4,9 +4,9 @@ spring:
   h2:
     console.enabled: true
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/accountdb
-    username: root
-    password: 12345
+    url: jdbc:mysql://orient-account-ms.c3m2wom2ynix.us-west-2.rds.amazonaws.com:3306/accountdb
+    username: admin
+    password: Admin12345_
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:

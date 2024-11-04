@@ -12,3 +12,5 @@ spring:
     hibernate:
       ddl-auto: create
     database-platform: org.hibernate.dialect.MySQL8Dialect
+
+   #Admin12345_
