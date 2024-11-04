@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  h2:
+    console.enabled: true
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/accountdb
+    username: root
+    password: 12345
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+   #Admin12345_
